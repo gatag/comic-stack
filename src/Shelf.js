@@ -75,7 +75,7 @@ class Comic extends React.Component {
   }
 
   handleClick() {
-    this.props.onClick(this.props);
+    this.props.onClick(this.props, this.props.keyId);
   }
 
   render() {
@@ -100,11 +100,11 @@ class Comic extends React.Component {
 class Shelf extends React.Component {
   constructor(props) {
     super(props);
-    this.handleComicClick = this.handleComicClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleComicClick(comicProps) {
-    this.props.handleEdit(comicProps);
+  handleClick(comicProps, keyId) {
+    this.props.onClick(comicProps, keyId);
   }
 
   render() {
@@ -121,8 +121,10 @@ class Shelf extends React.Component {
         isPreOrdered={book.isPreOrdered}
         status={book.status}
         key={book.key}
-        onClick={this.handleComicClick}
+        keyId={book.key}
+        onClick={this.handleClick}
       />
+
     ));
     return <div>{bookItems}</div>;
   }
