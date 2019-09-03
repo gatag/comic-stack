@@ -29,8 +29,9 @@ class Editor extends React.Component {
           isPreOrdered={this.props.editting.isPreOrdered}
           status={this.props.editting.status}
           date={this.props.editting.date}
-          name="editComic"
-          class="createComic"
+          class="editComic"
+          name="editor"
+          button="内容を変更する"
         ></InputForm>
       );
     }

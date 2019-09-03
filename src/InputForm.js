@@ -238,7 +238,7 @@ class InputForm extends React.Component {
           value={this.props.date}
           onChange={this.handleChange}
         />
-        <button type="submit">本棚に追加する</button>
+        <button type="submit">{this.props.button}</button>
       </form>
     );
   }

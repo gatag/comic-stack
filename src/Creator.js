@@ -49,6 +49,7 @@ class Creator extends React.Component {
         date={this.state.date}
         class="createComic"
         name="creator"
+        button="本棚に追加する"
       />
     );
   }
