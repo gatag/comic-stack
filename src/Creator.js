@@ -37,21 +37,25 @@ class Creator extends React.Component {
   }
 
   render() {
-    return (
-      <InputForm
-        onChange={this.handleChange}
-        onSubmit={this.handleSubmit}
-        title={this.state.title}
-        number={this.state.number}
-        latest={this.state.latest}
-        isPreOrdered={this.state.isPreOrdered}
-        status={this.state.status}
-        date={this.state.date}
-        class="createComic"
-        name="creator"
-        button="本棚に追加する"
-      />
-    );
+    if (this.props.isCreating === false) {
+      return false;
+    } else {
+      return (
+        <InputForm
+          onChange={this.handleChange}
+          onSubmit={this.handleSubmit}
+          title={this.state.title}
+          number={this.state.number}
+          latest={this.state.latest}
+          isPreOrdered={this.state.isPreOrdered}
+          status={this.state.status}
+          date={this.state.date}
+          class="createComic"
+          name="creator"
+          button="本棚に追加する"
+        />
+      );
+    }
   }
 }
 

@@ -37,3 +37,10 @@ body {
   background: hsl(197, 8%, 93%);
   box-sizing: border-box;
 }
+
+.funcButton {
+  display: block;
+  width: 20vw;
+  margin: 5vh auto;
+  background: hsl(197, 8%, 93%);
+}

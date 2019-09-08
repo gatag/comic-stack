@@ -8,6 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isCreating: false,
       books: JSON.parse(localStorage.getItem("books")),
       nextKey: localStorage.getItem("nextKey")
         ? localStorage.getItem("nextKey")
@@ -19,6 +20,7 @@ class App extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleComicClick = this.handleComicClick.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   handleCreate(bookInfomation) {
@@ -80,10 +82,17 @@ class App extends React.Component {
     return;
   }
 
+  handleButtonClick(){
+    this.setState({
+      isCreating: !this.state.isCreating
+    });
+  }
+
   render() {
     return (
       <div>
-        <Creator onCreate={this.handleCreate} nextKey={this.state.nextKey} />
+        <button onClick={this.handleButtonClick} className="funcButton">+</button>
+        <Creator isCreating={this.state.isCreating} onCreate={this.handleCreate} nextKey={this.state.nextKey} />
         <Editor
           editting={this.state.editting}
           edittingKey={this.state.edittingKey}
