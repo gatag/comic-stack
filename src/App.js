@@ -72,6 +72,7 @@ class App extends React.Component {
   }
 
   handleComicClick(comicProps, keyId) {
+    document.getElementsByTagName('body')[0].classList.toggle('editting');
     this.setState({
       editting: comicProps,
       edittingKey: keyId
@@ -79,7 +80,10 @@ class App extends React.Component {
   }
 
   handleUpdate(){
-    return;
+    document.getElementsByTagName('body')[0].classList.toggle('editting');
+    this.setState({
+      editting: null
+    });
   }
 
   handleButtonClick(){
