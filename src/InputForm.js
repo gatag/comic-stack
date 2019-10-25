@@ -238,7 +238,7 @@ class InputForm extends React.Component {
           value={this.props.date}
           onChange={this.handleChange}
         />
-        <button type="submit">{this.props.button}</button>
+        <button type="submit" className="input-form__submit">{this.props.button}</button>
       </form>
     );
   }

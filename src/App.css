@@ -1,22 +1,28 @@
+@charset "utf-8";
 
-.flex {
-  display: flex;
+#app {
+  position: relative;
+  padding: 3vw;
+}
+
+#shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .comic {
-  margin: 20px;
-  padding: 10px;
   background: hsl(197, 8%, 93%);
+  margin: 8px;
+  padding: 7px;
+  box-shadow: 2px 2px 5px 0px hsl(197, 29%, 10%);
 }
 
-.createComic {
-  padding: 10px;
-  margin: 20px;
-  background: hsl(197, 8%, 93%);
+.comic__title {
+  word-wrap: break-word;
 }
 
 .titleInput {
-  width: 23em;
+  width: 18em;
 }
 
 .numberInput {
@@ -31,8 +37,8 @@ body.editting {
   overflow: hidden;
 }
 
-.editComic {
-  position: absolute;
+.inputForm {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -40,19 +46,36 @@ body.editting {
   padding: 10px;
   background: hsl(197, 8%, 93%);
   box-sizing: border-box;
+}
+
+.input-form__submit {
+  border: 1px solid hsl(197, 29%, 44%);
+}
+
+.createComic {
   z-index: 2;
 }
 
-.funcButton {
+.editComic {
+  z-index: 4;
+}
+
+#funcButton {
   display: block;
   position: fixed;
-  bottom: 2vh;
-  right: 5vw;
-  width: 20vw;
-  height: 20vw;
-  margin: 2vh auto;
+  width: 75px;
+  height: 75px;
   background: hsl(197, 8%, 93%);
   border-radius: 50% 50%;
+  border: none;
+  box-shadow: 2px 1px 8px -2px;
   font-size: 40px;
   z-index: 3;
+  bottom: 4vh;
+  right: 4vw;
+}
+
+#plus.x {
+  display: inline-block;
+  transform: rotate(45deg);
 }

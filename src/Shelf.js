@@ -81,7 +81,7 @@ class Comic extends React.Component {
   render() {
     return (
       <section className="comic" onClick={this.handleClick}>
-        <h2>{this.props.title}</h2>
+        <h2 className="comic__title">{this.props.title}</h2>
         <h3>{this.props.number}巻まで持ってる！</h3>
         <dl>
           <LatestNumber latest={this.props.latest} status={this.props.status} />
@@ -126,7 +126,7 @@ class Shelf extends React.Component {
       />
 
     ));
-    return <div>{bookItems}</div>;
+    return <div id="shelf">{bookItems}</div>;
   }
 }
 

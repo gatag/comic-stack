@@ -50,7 +50,7 @@ class Creator extends React.Component {
           isPreOrdered={this.state.isPreOrdered}
           status={this.state.status}
           date={this.state.date}
-          class="editComic"
+          class="inputForm createComic"
           name="creator"
           button="本棚に追加する"
         />

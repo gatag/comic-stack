@@ -87,15 +87,22 @@ class App extends React.Component {
   }
 
   handleButtonClick(){
+    const isCreating = this.state.isCreating;
     this.setState({
-      isCreating: !this.state.isCreating
+      isCreating: !isCreating
     });
+    const plus = document.getElementById("plus");
+    if (!isCreating) {
+      plus.classList.add("x");
+    } else {
+      plus.classList.remove("x");
+    }
   }
 
   render() {
     return (
-      <div>
-        <button onClick={this.handleButtonClick} className="funcButton">+</button>
+      <div id="app">
+        <button onClick={this.handleButtonClick} id="funcButton"><span id="plus">+</span></button>
         <Creator isCreating={this.state.isCreating} onCreate={this.handleCreate} nextKey={this.state.nextKey} />
         <Editor
           editting={this.state.editting}
